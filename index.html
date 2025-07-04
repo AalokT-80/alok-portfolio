@@ -570,7 +570,6 @@
         typeWriter();
       }
 
-      // Correct Navbar collapse logic
       const navLinks = document.querySelectorAll('.nav-link');
       const navbarToggler = document.querySelector('.navbar-toggler');
       const navbarCollapse = document.getElementById('navbarNav');
@@ -578,7 +577,6 @@
       navLinks.forEach((link) => {
         link.addEventListener('click', () => {
           if (window.getComputedStyle(navbarToggler).display !== 'none') {
-            // Only collapse if toggler is visible (mobile mode)
             new bootstrap.Collapse(navbarCollapse).hide();
           }
         });
