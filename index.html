@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alok Tiwari | An Engineer</title>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.png" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 
     <style>
         :root {
@@ -39,6 +36,7 @@
             transition: background-color 0.3s, color 0.3s;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            position: relative;
         }
 
         #particles-js {
@@ -92,7 +90,6 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28243, 244, 246, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
-        /* Mobile menu styling */
         @media (max-width: 991.98px) {
             .navbar-collapse {
                 background-color: var(--nav-bg);
@@ -103,28 +100,24 @@
                 padding: 1rem;
                 border: 1px solid var(--border-color);
             }
-
             .navbar-nav {
                 text-align: center;
             }
-
             .nav-item {
                 margin: 0.25rem 0;
             }
-
             .nav-link {
                 padding: 0.5rem 1rem !important;
                 border-radius: 0.5rem;
                 transition: all 0.2s ease;
             }
-
             .nav-link:hover {
                 background-color: rgba(129, 140, 248, 0.1);
             }
         }
 
         #hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -156,17 +149,9 @@
         }
 
         @keyframes gradient-flow {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .typewriter {
@@ -182,9 +167,7 @@
         }
 
         @keyframes caret {
-            50% {
-                border-color: transparent;
-            }
+            50% { border-color: transparent; }
         }
 
         section {
@@ -266,12 +249,10 @@
             section {
                 padding: 4rem 0;
             }
-
             section h2 {
                 font-size: 2rem;
                 margin-bottom: 2rem;
             }
-
             #hero {
                 padding: 0 1.5rem;
             }
@@ -279,7 +260,7 @@
     </style>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav">
     <div id="particles-js"></div>
 
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -291,6 +272,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
@@ -302,215 +284,205 @@
         </div>
     </nav>
 
-    <section id="hero">
-        <img src="assets/image/profile.jpg" alt="Alok Tiwari" class="hero-image mb-4" data-aos="zoom-in">
-        <h1 data-aos="fade-up">Hi, I'm <span class="gradient-text">Alok Tiwari</span></h1>
-        <p class="typewriter" data-aos="fade-up" data-aos-delay="200">
-            <span id="typed-text"></span>
-        </p>
-    </section>
+    <main>
+        <section id="hero">
+            <img src="assets/image/profile.jpg" alt="Alok Tiwari" class="hero-image mb-4" data-aos="zoom-in">
+            <h1 data-aos="fade-up">Hi, I'm <span class="gradient-text">Alok Tiwari</span></h1>
+            <p class="typewriter" data-aos="fade-up" data-aos-delay="200">
+                <span id="typed-text"></span>
+            </p>
+        </section>
 
-    <section id="seeking-opportunity" class="py-3">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-8" data-aos="fade-up" data-aos-delay="300">
-                    <div class="glass-card p-3 text-center">
-                        <h5 class="mb-0 gradient-text">
-                            Actively seeking roles as a
-                            <span class="d-inline-block">Data Analyst,</span>
-                            <span class="d-inline-block">Machine Learning Engineer</span>, or
-                            <span class="d-inline-block">Web Developer</span>.
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="container">
-            <h2 data-aos="fade-up" class="gradient-text">Education</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="glass-card p-4">
-                        <h5 class="mb-1">Bachelor of Engineering in Artificial Intelligence and Data Science</h5>
-                        <p class="mb-1 text-white-50">Sandip Institute of Technology and Research Centre | 2021 - 2025
-                        </p>
-                        <p class="mb-0 text-white-50">CGPA: 8.42 / 10</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications">
-        <div class="container">
-            <h2 data-aos="fade-up" class="gradient-text">Certifications</h2>
-            <div class="row gy-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="glass-card p-4 text-center">
-                        <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-                        <h5 class="mt-3">Foundations: Data, Data, Everywhere</h5>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/V3EH3DMN7AYW" target="_blank"
-                            class="btn btn-gradient mt-2">View Credential</a>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="glass-card p-4 text-center">
-                        <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-                        <h5 class="mt-3">Ask Questions to Make Data-Driven Decisions</h5>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/L5BAF25JLIHZ" target="_blank"
-                            class="btn btn-gradient mt-2">View Credential</a>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="glass-card p-4 text-center">
-                        <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-                        <h5 class="mt-3">Prepare Data for Exploration</h5>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/R7QXXYP88Q56" target="_blank"
-                            class="btn btn-gradient mt-2">View Credential</a>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="glass-card p-4 text-center">
-                        <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-                        <h5 class="mt-3">Process Data from Dirty to Clean</h5>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/K3F4YUZM33PD" target="_blank"
-                            class="btn btn-gradient mt-2">View Credential</a>
-                    </div>
-                </div>
-                <div class="row justify-content-center mt-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="col-md-8">
+        <section id="seeking-opportunity" class="py-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8" data-aos="fade-up" data-aos-delay="300">
                         <div class="glass-card p-3 text-center">
-                            <p class="mb-0 text-white-50">
-                                📄 More certifications in progress... stay tuned for updates!
+                            <h5 class="mb-0 gradient-text">
+                                Actively seeking roles as a
+                                <span class="d-inline-block">Data Analyst,</span>
+                                <span class="d-inline-block">Machine Learning Engineer</span>, or
+                                <span class="d-inline-block">Web Developer</span>.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h2 data-aos="fade-up" class="gradient-text">Education</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
+                        <div class="glass-card p-4">
+                            <h5 class="mb-1">Bachelor of Engineering in Artificial Intelligence and Data Science</h5>
+                            <p class="mb-1 text-white-50">Sandip Institute of Technology and Research Centre | 2021 - 2025</p>
+                            <p class="mb-0 text-white-50">CGPA: 8.42 / 10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <div class="container">
+                <h2 data-aos="fade-up" class="gradient-text">Certifications</h2>
+                <div class="row gy-4">
+                    <div class="col-md-4" data-aos="fade-up">
+                        <div class="glass-card p-4 text-center">
+                            <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
+                            <h5 class="mt-3">Foundations: Data, Data, Everywhere</h5>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/V3EH3DMN7AYW" target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="glass-card p-4 text-center">
+                            <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
+                            <h5 class="mt-3">Ask Questions to Make Data-Driven Decisions</h5>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/L5BAF25JLIHZ" target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="glass-card p-4 text-center">
+                            <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
+                            <h5 class="mt-3">Prepare Data for Exploration</h5>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/R7QXXYP88Q56" target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="glass-card p-4 text-center">
+                            <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
+                            <h5 class="mt-3">Process Data from Dirty to Clean</h5>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/K3F4YUZM33PD" target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="col-md-8">
+                            <div class="glass-card p-3 text-center">
+                                <p class="mb-0 text-white-50">
+                                    📄 More certifications in progress... stay tuned for updates!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 data-aos="fade-up" class="gradient-text">Projects</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="glass-card p-4">
+                            <h5>CNN-based Cardiac Artery Disease Detection System</h5>
+                            <p class="text-white-50">Developed a CNN model to detect CAD from cardiac images with ~92% accuracy using data augmentation and optimized training in TensorFlow and Flask.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary">Python</span>
+                                <span class="badge bg-secondary">TensorFlow</span>
+                                <span class="badge bg-secondary">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="glass-card p-4">
+                            <h5>E-commerce Dashboard (Power BI & Excel)</h5>
+                            <p class="text-white-50">Visualized metrics like revenue, shipping delays, and KPIs using slicers in Power BI and dynamic charts in Excel with Pivot Tables and Combo Box filters.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary">Power BI</span>
+                                <span class="badge bg-secondary">Excel</span>
+                                <span class="badge bg-secondary">Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="glass-card p-4">
+                            <h5>Online Food Ordering System using Django</h5>
+                            <p class="text-white-50">Developed a full-stack web app with real-time order tracking, user auth, and admin panel for menu/order management using Django and SQLite.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary">Django</span>
+                                <span class="badge bg-secondary">HTML</span>
+                                <span class="badge bg-secondary">CSS</span>
+                                <span class="badge bg-secondary">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12" data-aos="fade-up">
+                        <div class="glass-card p-4 text-center">
+                            <p class="text-white-50 mb-0">More projects will be added soon. Stay tuned!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="internships">
+            <div class="container">
+                <h2 data-aos="fade-up" class="gradient-text">Internships</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                        <div class="glass-card p-4">
+                            <h5>Python Developer Intern</h5>
+                            <p class="text-white-50 mb-1">Infosys SpringBoard | March 2024 - June 2024 | Remote</p>
+                            <p class="text-white-50">
+                                Developed an Online Food Ordering System using Django. Implemented user authentication, real-time cart and order management, admin interface for item control, and clean separation of models, views, and templates for maintainable backend structure.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="glass-card p-4">
+                            <h5>Python Developer Intern</h5>
+                            <p class="text-white-50 mb-1">A2Z IT Hub, Nashik | Industrial Training | On-site</p>
+                            <p class="text-white-50">
+                                Currently undergoing industrial training with a focus on Django-based full-stack web development. Working on building dynamic web apps, integrating databases, enhancing UI with Bootstrap, and learning deployment strategies.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2 data-aos="fade-up" class="gradient-text">Projects</h2>
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="glass-card p-4">
-                        <h5>CNN-based Cardiac Artery Disease Detection System</h5>
-                        <p class="text-white-50">Developed a CNN model to detect CAD from cardiac images with ~92%
-                            accuracy using data augmentation and optimized training in TensorFlow and Flask.</p>
-                        <div class="mb-3">
-                            <span class="badge bg-secondary">Python</span>
-                            <span class="badge bg-secondary">TensorFlow</span>
-                            <span class="badge bg-secondary">Flask</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="glass-card p-4">
-                        <h5>E-commerce Dashboard (Power BI & Excel)</h5>
-                        <p class="text-white-50">Visualized metrics like revenue, shipping delays, and KPIs using
-                            slicers in Power BI and dynamic charts in Excel with Pivot Tables and Combo Box filters.</p>
-                        <div class="mb-3">
-                            <span class="badge bg-secondary">Power BI</span>
-                            <span class="badge bg-secondary">Excel</span>
-                            <span class="badge bg-secondary">Dashboard</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="glass-card p-4">
-                        <h5>Online Food Ordering System using Django</h5>
-                        <p class="text-white-50">Developed a full-stack web app with real-time order tracking, user
-                            auth, and admin panel for menu/order management using Django and SQLite.</p>
-                        <div class="mb-3">
-                            <span class="badge bg-secondary">Django</span>
-                            <span class="badge bg-secondary">HTML</span>
-                            <span class="badge bg-secondary">CSS</span>
-                            <span class="badge bg-secondary">SQLite</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12" data-aos="fade-up">
-                    <div class="glass-card p-4 text-center">
-                        <p class="text-white-50 mb-0">More projects will be added soon. Stay tuned!</p>
-                    </div>
+        <section id="skills">
+            <div class="container text-center">
+                <h2 data-aos="fade-up" class="gradient-text">Skills</h2>
+                <div class="d-flex flex-wrap justify-content-center mt-4" data-aos="fade-up" data-aos-delay="100">
+                    <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+                    <span class="skill-badge"><i class="fas fa-chart-bar"></i> Data Analysis</span>
+                    <span class="skill-badge"><i class="fas fa-brain"></i> Machine Learning</span>
+                    <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
+                    <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
+                    <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+                    <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
+                    <span class="skill-badge"><i class="fas fa-chart-pie"></i> Power BI</span>
+                    <span class="skill-badge"><i class="fas fa-code"></i> Django</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="internships">
-        <div class="container">
-            <h2 data-aos="fade-up" class="gradient-text">Internships</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-                    <div class="glass-card p-4">
-                        <h5>Python Developer Intern</h5>
-                        <p class="text-white-50 mb-1">Infosys SpringBoard | March 2024 - June 2024 | Remote</p>
-                        <p class="text-white-50">
-                            Developed an Online Food Ordering System using Django. Implemented user authentication,
-                            real-time cart and order management, admin interface for item control, and clean separation
-                            of models, views, and templates for maintainable backend structure.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="glass-card p-4">
-                        <h5>Python Developer Intern</h5>
-                        <p class="text-white-50 mb-1">A2Z IT Hub, Nashik | Industrial Training | On-site</p>
-                        <p class="text-white-50">
-                            Currently undergoing industrial training with a focus on Django-based full-stack web
-                            development. Working on building dynamic web apps, integrating databases, enhancing UI with
-                            Bootstrap, and learning deployment strategies.
-                        </p>
-                    </div>
+        <section id="contact">
+            <div class="container text-center">
+                <h2 data-aos="fade-up" class="gradient-text">Get In Touch</h2>
+                <p data-aos="fade-up" data-aos-delay="100" class="lead text-white-50 mb-4">
+                    I'm currently looking for new opportunities. My inbox is always open!
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
+                    <a href="mailto:er.alok.tiwari.25@gmail.com" class="btn btn-gradient btn-lg">
+                        <i class="fas fa-envelope me-2"></i> Email Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/er-alok-tiwari" target="_blank" class="btn btn-gradient btn-lg">
+                        <i class="fab fa-linkedin me-2"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/AalokT-80" target="_blank" class="btn btn-gradient btn-lg">
+                        <i class="fab fa-github me-2"></i> GitHub
+                    </a>
+                    <a href="https://wa.me/919405321773" target="_blank" class="btn btn-gradient btn-lg">
+                        <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container text-center">
-            <h2 data-aos="fade-up" class="gradient-text">Skills</h2>
-            <div class="d-flex flex-wrap justify-content-center mt-4" data-aos="fade-up" data-aos-delay="100">
-                <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
-                <span class="skill-badge"><i class="fas fa-chart-bar"></i> Data Analysis</span>
-                <span class="skill-badge"><i class="fas fa-brain"></i> Machine Learning</span>
-                <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
-                <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
-                <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
-                <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
-                <span class="skill-badge"><i class="fas fa-chart-pie"></i> Power BI</span>
-                <span class="skill-badge"><i class="fas fa-code"></i> Django</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container text-center">
-            <h2 data-aos="fade-up" class="gradient-text">Get In Touch</h2>
-            <p data-aos="fade-up" data-aos-delay="100" class="lead text-white-50 mb-4">
-                I'm currently looking for new opportunities. My inbox is always open!
-            </p>
-            <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
-                <a href="mailto:er.alok.tiwari.25@gmail.com" class="btn btn-gradient btn-lg">
-                    <i class="fas fa-envelope me-2"></i> Email Me
-                </a>
-                <a href="https://www.linkedin.com/in/er-alok-tiwari" target="_blank" class="btn btn-gradient btn-lg">
-                    <i class="fab fa-linkedin me-2"></i> LinkedIn
-                </a>
-                <a href="https://github.com/AalokT-80" target="_blank" class="btn btn-gradient btn-lg">
-                    <i class="fab fa-github me-2"></i> GitHub
-                </a>
-                <a href="https://wa.me/919405321773" target="_blank" class="btn btn-gradient btn-lg">
-                    <i class="fab fa-whatsapp me-2"></i> WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -548,67 +520,69 @@
             });
 
             const typedTextElement = document.getElementById('typed-text');
-            const phrases = ["a Data Analyst.", "an ML Engineer.", "a Web Developer."];
-            let phraseIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
+            if (typedTextElement) {
+                const phrases = ["a Data Analyst.", "an ML Engineer.", "a Web Developer."];
+                let phraseIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
 
-            function typeWriter() {
-                const currentPhrase = phrases[phraseIndex];
-                let currentText = '';
+                function typeWriter() {
+                    const currentPhrase = phrases[phraseIndex];
+                    let currentText = '';
 
-                if (isDeleting) {
-                    currentText = currentPhrase.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    currentText = currentPhrase.substring(0, charIndex + 1);
-                    charIndex++;
+                    if (isDeleting) {
+                        currentText = currentPhrase.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        currentText = currentPhrase.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    typedTextElement.textContent = currentText;
+                    let typeSpeed = isDeleting ? 75 : 150;
+
+                    if (!isDeleting && charIndex === currentPhrase.length) {
+                        typeSpeed = 2000;
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        typeSpeed = 500;
+                    }
+                    setTimeout(typeWriter, typeSpeed);
                 }
-
-                typedTextElement.textContent = currentText;
-                let typeSpeed = isDeleting ? 75 : 150;
-
-                if (!isDeleting && charIndex === currentPhrase.length) {
-                    typeSpeed = 2000;
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    typeSpeed = 500;
-                }
-
-                setTimeout(typeWriter, typeSpeed);
+                typeWriter();
             }
-            typeWriter();
-
+            
+            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (!target) return;
-
-                    const navbarCollapseEl = document.getElementById('navbarNav');
-
-                    const scrollToTarget = () => {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        const navbar = document.querySelector('.navbar');
+                        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
                         });
-                    };
 
-                    if (navbarCollapseEl && navbarCollapseEl.classList.contains('show')) {
-                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseEl);
-                        navbarCollapseEl.addEventListener('hidden.bs.collapse', scrollToTarget, { once: true });
-                        if (bsCollapse) {
-                            bsCollapse.hide();
+                        // Hide mobile navbar after click
+                        const navbarCollapseEl = document.getElementById('navbarNav');
+                        if (navbarCollapseEl && navbarCollapseEl.classList.contains('show')) {
+                            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseEl);
+                            if (bsCollapse) {
+                                bsCollapse.hide();
+                            }
                         }
-                    } else {
-                        scrollToTarget();
                     }
                 });
             });
+
         });
     </script>
 </body>
-
 </html>
