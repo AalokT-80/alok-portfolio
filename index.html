@@ -2,512 +2,525 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alok Tiwari | An Engineer</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alok Tiwari | An Engineer</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
-    <style>
-  :root {
-    --bg-color: #111827;
-    --text-color: #F3F4F6;
-    --card-bg: rgba(31, 41, 55, 0.5);
-    --border-color: rgba(243, 244, 246, 0.2);
-    --gradient: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc, #f472b6);
-    --nav-bg: rgba(17, 24, 39, 0.8);
-    --nav-height: 70px;
-  }
+  <style>
+    :root {
+      --bg-color: #111827;
+      --text-color: #F3F4F6;
+      --card-bg: rgba(31, 41, 55, 0.5);
+      --border-color: rgba(243, 244, 246, 0.2);
+      --gradient: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc, #f472b6);
+      --nav-bg: rgba(17, 24, 39, 0.8);
+      --nav-height: 70px;
+    }
 
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-  html, body {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scroll-padding-top: var(--nav-height);
-    margin: 0;
-    padding: 0;
-  }
+    html,
+    body {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    position: relative;
-  }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
 
-  #particles-js {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
+    #particles-js {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
 
-  .container {
-    max-width: 100%;
-    padding: 0 1rem;
-    margin: 0 auto;
-  }
+    .container {
+      max-width: 100%;
+      padding: 0 1rem;
+      margin: 0 auto;
+    }
 
-  .navbar {
-    background-color: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    min-height: var(--nav-height);
-  }
-
-  .navbar-brand,
-  .nav-link {
-    color: var(--text-color) !important;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-
-  .navbar-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-  }
-
-  .nav-link.active,
-  .nav-link:hover {
-    color: #818cf8 !important;
-  }
-
-  .navbar-toggler {
-    border: none;
-    padding: 0.25rem 0.5rem;
-    font-size: 1.1rem;
-    background: rgba(129, 140, 248, 0.1);
-    border-radius: 0.5rem;
-  }
-
-  .navbar-toggler:focus {
-    box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.25);
-  }
-
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28243, 244, 246, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
-
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  #hero .hero-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #818cf8;
-    box-shadow: 0 0 25px rgba(129, 140, 248, 0.5);
-  }
-
-  #hero h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-  }
-
-  .gradient-text {
-    background: var(--gradient);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-flow 5s ease infinite;
-  }
-
-  @keyframes gradient-flow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  .typewriter {
-    font-size: clamp(1.2rem, 4vw, 1.5rem);
-    font-family: 'Space Grotesk', sans-serif;
-    color: #9CA3AF;
-    min-height: 2.5rem;
-  }
-
-  .typewriter>#typed-text {
-    border-right: 0.15em solid #818cf8;
-    animation: caret 0.75s steps(1) infinite;
-  }
-
-  @keyframes caret {
-    50% { border-color: transparent; }
-  }
-
-  section {
-    padding: 6rem 0;
-    position: relative;
-  }
-
-  section h2 {
-    text-align: center;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .glass-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-  }
-
-  .glass-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  }
-
-  .btn-gradient {
-    background-image: var(--gradient);
-    background-size: 200% auto;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: background-position 0.3s ease;
-  }
-
-  .btn-gradient:hover {
-    background-position: right center;
-    color: white;
-  }
-
-  .skill-badge {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    padding: 0.8em 1.2em;
-    margin: 0.5em;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75em;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
-  }
-
-  .skill-badge:hover {
-    transform: scale(1.05);
-    color: #c084fc;
-  }
-
-  footer {
-    background: #111827;
-    padding: 2rem 0;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-    color: #9CA3AF;
-  }
-
-  @media (max-width: 767px) {
-    .navbar-nav {
+    .navbar {
       background-color: var(--nav-bg);
-      padding: 1rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      min-height: var(--nav-height);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: var(--text-color) !important;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .navbar-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      color: #818cf8 !important;
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.1rem;
+      background: rgba(129, 140, 248, 0.1);
       border-radius: 0.5rem;
     }
 
-    section {
-      padding: 4rem 1rem;
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.25);
     }
 
-    .glass-card {
-      margin: 1rem 0;
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28243, 244, 246, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-    .typewriter {
-      font-size: 1rem;
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    #hero .hero-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #818cf8;
+      box-shadow: 0 0 25px rgba(129, 140, 248, 0.5);
     }
 
     #hero h1 {
-      font-size: 2rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
     }
-  }
-</style>
+
+    .gradient-text {
+      background: var(--gradient);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-flow 5s ease infinite;
+    }
+
+    @keyframes gradient-flow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .typewriter {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      font-family: 'Space Grotesk', sans-serif;
+      color: #9CA3AF;
+      min-height: 2.5rem;
+    }
+
+    .typewriter>#typed-text {
+      border-right: 0.15em solid #818cf8;
+      animation: caret 0.75s steps(1) infinite;
+    }
+
+    @keyframes caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    section h2 {
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-gradient {
+      background-image: var(--gradient);
+      background-size: 200% auto;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background-position 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+      background-position: right center;
+      color: white;
+    }
+
+    .skill-badge {
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      padding: 0.8em 1.2em;
+      margin: 0.5em;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75em;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+
+    .skill-badge:hover {
+      transform: scale(1.05);
+      color: #c084fc;
+    }
+
+    footer {
+      background: #111827;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      color: #9CA3AF;
+    }
+
+    @media (max-width: 767px) {
+      .navbar-nav {
+        background-color: var(--nav-bg);
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      section {
+        padding: 4rem 1rem;
+      }
+
+      .glass-card {
+        margin: 1rem 0;
+      }
+
+      .typewriter {
+        font-size: 1rem;
+      }
+
+      #hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#main-nav">
 
-    <div id="particles-js"></div>
+  <div id="particles-js"></div>
 
-    <nav id="main-nav" class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#hero">ALOK TIWARI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#internships">Internships</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+  <nav id="main-nav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#hero">ALOK TIWARI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#internships">Internships</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="hero">
+      <img src="assets/image/profile.jpg" alt="Alok Tiwari" class="hero-image mb-4" data-aos="zoom-in" width="150"
+        height="150">
+      <h1 data-aos="fade-up">Hi, I'm <span class="gradient-text">Alok Tiwari</span></h1>
+      <p class="typewriter" data-aos="fade-up" data-aos-delay="200">
+        <span id="typed-text"></span>
+      </p>
+    </section>
+
+    <section id="seeking-opportunity" class="py-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8" data-aos="fade-up" data-aos-delay="300">
+            <div class="glass-card p-3 text-center">
+              <h5 class="mb-0 gradient-text">
+                Actively seeking roles as a
+                <span class="d-inline-block">Data Analyst,</span>
+                <span class="d-inline-block">Machine Learning Engineer</span>, or
+                <span class="d-inline-block">Web Developer</span>.
+              </h5>
             </div>
+          </div>
         </div>
-    </nav>
+      </div>
+    </section>
 
-    <main>
-        <section id="hero">
-            <img src="assets/image/profile.jpg" alt="Alok Tiwari" class="hero-image mb-4" data-aos="zoom-in" width="150"
-                height="150">
-            <h1 data-aos="fade-up">Hi, I'm <span class="gradient-text">Alok Tiwari</span></h1>
-            <p class="typewriter" data-aos="fade-up" data-aos-delay="200">
-                <span id="typed-text"></span>
-            </p>
-        </section>
-
-        <section id="seeking-opportunity" class="py-3">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-8" data-aos="fade-up" data-aos-delay="300">
-                        <div class="glass-card p-3 text-center">
-                            <h5 class="mb-0 gradient-text">
-                                Actively seeking roles as a
-                                <span class="d-inline-block">Data Analyst,</span>
-                                <span class="d-inline-block">Machine Learning Engineer</span>, or
-                                <span class="d-inline-block">Web Developer</span>.
-                            </h5>
-                        </div>
-                    </div>
-                </div>
+    <section id="education">
+      <div class="container">
+        <h2 data-aos="fade-up" class="gradient-text">Education</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card p-4">
+              <h5 class="mb-1">Bachelor of Engineering in Artificial Intelligence and Data Science</h5>
+              <p class="mb-1 text-white-50">Sandip Institute of Technology and Research Centre | 2021 -
+                2025
+              </p>
+              <p class="mb-0 text-white-50">CGPA: 8.42 / 10</p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="education">
-            <div class="container">
-                <h2 data-aos="fade-up" class="gradient-text">Education</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4">
-                            <h5 class="mb-1">Bachelor of Engineering in Artificial Intelligence and Data Science</h5>
-                            <p class="mb-1 text-white-50">Sandip Institute of Technology and Research Centre | 2021 -
-                                2025
-                            </p>
-                            <p class="mb-0 text-white-50">CGPA: 8.42 / 10</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="certifications">
+      <div class="container">
+        <h2 data-aos="fade-up" class="gradient-text">Certifications</h2>
+        <div class="row gy-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="glass-card p-4 text-center">
+              <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
+              <h5 class="mt-3">Foundations: Data, Data, Everywhere</h5>
+              <a href="https://www.coursera.org/account/accomplishments/verify/V3EH3DMN7AYW" target="_blank"
+                class="btn btn-gradient mt-2">View Credential</a>
             </div>
-        </section>
-
-        <section id="certifications">
-            <div class="container">
-                <h2 data-aos="fade-up" class="gradient-text">Certifications</h2>
-                <div class="row gy-4">
-                    <div class="col-md-4" data-aos="fade-up">
-                        <div class="glass-card p-4 text-center">
-                            <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-                            <h5 class="mt-3">Foundations: Data, Data, Everywhere</h5>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/V3EH3DMN7AYW"
-                                target="_blank" class="btn btn-gradient mt-2">View Credential</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 text-center">
-                            <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-                            <h5 class="mt-3">Ask Questions to Make Data-Driven Decisions</h5>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/L5BAF25JLIHZ"
-                                target="_blank" class="btn btn-gradient mt-2">View Credential</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="glass-card p-4 text-center">
-                            <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-                            <h5 class="mt-3">Prepare Data for Exploration</h5>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/R7QXXYP88Q56"
-                                target="_blank" class="btn btn-gradient mt-2">View Credential</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="glass-card p-4 text-center">
-                            <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-                            <h5 class="mt-3">Process Data from Dirty to Clean</h5>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/K3F4YUZM33PD"
-                                target="_blank" class="btn btn-gradient mt-2">View Credential</a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mt-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="col-md-8">
-                            <div class="glass-card p-3 text-center">
-                                <p class="mb-0 text-white-50">
-                                    📄 More certifications in progress... stay tuned for updates!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card p-4 text-center">
+              <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
+              <h5 class="mt-3">Ask Questions to Make Data-Driven Decisions</h5>
+              <a href="https://www.coursera.org/account/accomplishments/verify/L5BAF25JLIHZ" target="_blank"
+                class="btn btn-gradient mt-2">View Credential</a>
             </div>
-        </section>
-
-        <section id="projects">
-            <div class="container">
-                <h2 data-aos="fade-up" class="gradient-text">Projects</h2>
-                <div class="row g-4">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <div class="glass-card p-4">
-                            <h5>CNN-based Cardiac Artery Disease Detection System</h5>
-                            <p class="text-white-50">Developed a CNN model to detect CAD from cardiac images with ~92%
-                                accuracy using data augmentation and optimized training in TensorFlow and Flask.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-secondary">Python</span>
-                                <span class="badge bg-secondary">TensorFlow</span>
-                                <span class="badge bg-secondary">Flask</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="glass-card p-4">
-                            <h5>E-commerce Dashboard (Power BI & Excel)</h5>
-                            <p class="text-white-50">Visualized metrics like revenue, shipping delays, and KPIs using
-                                slicers in Power BI and dynamic charts in Excel with Pivot Tables and Combo Box filters.
-                            </p>
-                            <div class="mb-3">
-                                <span class="badge bg-secondary">Power BI</span>
-                                <span class="badge bg-secondary">Excel</span>
-                                <span class="badge bg-secondary">Dashboard</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <div class="glass-card p-4">
-                            <h5>Online Food Ordering System using Django</h5>
-                            <p class="text-white-50">Developed a full-stack web app with real-time order tracking, user
-                                auth, and admin panel for menu/order management using Django and SQLite.</p>
-                            <div class="mb-3">
-                                <span class="badge bg-secondary">Django</span>
-                                <span class="badge bg-secondary">HTML</span>
-                                <span class="badge bg-secondary">CSS</span>
-                                <span class="badge bg-secondary">SQLite</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12" data-aos="fade-up">
-                        <div class="glass-card p-4 text-center">
-                            <p class="text-white-50 mb-0">More projects will be added soon. Stay tuned!</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card p-4 text-center">
+              <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
+              <h5 class="mt-3">Prepare Data for Exploration</h5>
+              <a href="https://www.coursera.org/account/accomplishments/verify/R7QXXYP88Q56" target="_blank"
+                class="btn btn-gradient mt-2">View Credential</a>
             </div>
-        </section>
-
-        <section id="internships">
-            <div class="container">
-                <h2 data-aos="fade-up" class="gradient-text">Internships</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4">
-                            <h5>Python Developer Intern</h5>
-                            <p class="text-white-50 mb-1">Infosys SpringBoard | March 2024 - June 2024 | Remote</p>
-                            <p class="text-white-50">
-                                Developed an Online Food Ordering System using Django. Implemented user authentication,
-                                real-time cart and order management, admin interface for item control, and clean
-                                separation
-                                of models, views, and templates for maintainable backend structure.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="glass-card p-4">
-                            <h5>Python Developer Intern</h5>
-                            <p class="text-white-50 mb-1">A2Z IT Hub, Nashik | Industrial Training | On-site</p>
-                            <p class="text-white-50">
-                                Currently undergoing industrial training with a focus on Django-based full-stack web
-                                development. Working on building dynamic web apps, integrating databases, enhancing UI
-                                with
-                                Bootstrap, and learning deployment strategies.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="glass-card p-4 text-center">
+              <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
+              <h5 class="mt-3">Process Data from Dirty to Clean</h5>
+              <a href="https://www.coursera.org/account/accomplishments/verify/K3F4YUZM33PD" target="_blank"
+                class="btn btn-gradient mt-2">View Credential</a>
             </div>
-        </section>
-
-        <section id="skills">
-            <div class="container text-center">
-                <h2 data-aos="fade-up" class="gradient-text">Skills</h2>
-                <div class="d-flex flex-wrap justify-content-center mt-4" data-aos="fade-up" data-aos-delay="100">
-                    <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
-                    <span class="skill-badge"><i class="fas fa-chart-bar"></i> Data Analysis</span>
-                    <span class="skill-badge"><i class="fas fa-brain"></i> Machine Learning</span>
-                    <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
-                    <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
-                    <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
-                    <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
-                    <span class="skill-badge"><i class="fas fa-chart-pie"></i> Power BI</span>
-                    <span class="skill-badge"><i class="fas fa-code"></i> Django</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container text-center">
-                <h2 data-aos="fade-up" class="gradient-text">Get In Touch</h2>
-                <p data-aos="fade-up" data-aos-delay="100" class="lead text-white-50 mb-4">
-                    I'm currently looking for new opportunities. My inbox is always open!
+          </div>
+          <div class="row justify-content-center mt-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-md-8">
+              <div class="glass-card p-3 text-center">
+                <p class="mb-0 text-white-50">
+                  📄 More certifications in progress... stay tuned for updates!
                 </p>
-                <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
-                    <a href="mailto:er.alok.tiwari.25@gmail.com" class="btn btn-gradient btn-lg">
-                        <i class="fas fa-envelope me-2"></i> Email Me
-                    </a>
-                    <a href="https://www.linkedin.com/in/er-alok-tiwari" target="_blank"
-                        class="btn btn-gradient btn-lg">
-                        <i class="fab fa-linkedin me-2"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/AalokT-80" target="_blank" class="btn btn-gradient btn-lg">
-                        <i class="fab fa-github me-2"></i> GitHub
-                    </a>
-                    <a href="https://wa.me/919405321773" target="_blank" class="btn btn-gradient btn-lg">
-                        <i class="fab fa-whatsapp me-2"></i> WhatsApp
-                    </a>
-                </div>
+              </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Alok Tiwari.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <section id="projects">
+      <div class="container">
+        <h2 data-aos="fade-up" class="gradient-text">Projects</h2>
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="glass-card p-4">
+              <h5>CNN-based Coronary Artery Disease Detection System</h5>
+              <p class="text-white-50">Developed a Convolutional Neural Network (CNN) model to detect Coronary Artery
+                Disease (CAD) from cardiac images with ~90% accuracy, utilizing data augmentation and optimized training
+                workflows in TensorFlow. Deployed the model using Flask for real-time inference.</p>
+              <div class="mb-3">
+                <span class="badge bg-secondary">Python</span>
+                <span class="badge bg-secondary">TensorFlow</span>
+                <span class="badge bg-secondary">Flask</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="glass-card p-4">
+              <h5>E-commerce Dashboard (Power BI & Excel)</h5>
+              <p class="text-white-50">Visualized metrics like revenue, shipping delays, and KPIs using
+                slicers in Power BI and dynamic charts in Excel with Pivot Tables and Combo Box filters.
+              </p>
+              <div class="mb-3">
+                <span class="badge bg-secondary">Power BI</span>
+                <span class="badge bg-secondary">Excel</span>
+                <span class="badge bg-secondary">Dashboard</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="glass-card p-4">
+              <h5>Online Food Ordering System using Django</h5>
+              <p class="text-white-50">Developed a full-stack web app with real-time order tracking, user
+                auth, and admin panel for menu/order management using Django and SQLite.</p>
+              <div class="mb-3">
+                <span class="badge bg-secondary">Django</span>
+                <span class="badge bg-secondary">HTML</span>
+                <span class="badge bg-secondary">CSS</span>
+                <span class="badge bg-secondary">SQLite</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12" data-aos="fade-up">
+            <div class="glass-card p-4 text-center">
+              <p class="text-white-50 mb-0">More projects will be added soon. Stay tuned!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="internships">
+      <div class="container">
+        <h2 data-aos="fade-up" class="gradient-text">Internships</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card p-4">
+              <h5>Python Developer Intern</h5>
+              <p class="text-white-50 mb-1">Infosys SpringBoard | March 2024 - June 2024 | Remote</p>
+              <p class="text-white-50">
+                Developed an Online Food Ordering System using Django. Implemented user authentication,
+                real-time cart and order management, admin interface for item control, and clean
+                separation
+                of models, views, and templates for maintainable backend structure.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card p-4">
+              <h5>Python Developer Intern</h5>
+              <p class="text-white-50 mb-1">A2Z IT Hub, Nashik | Industrial Training | On-site</p>
+              <p class="text-white-50">
+                Currently undergoing industrial training with a focus on Django-based full-stack web
+                development. Working on building dynamic web apps, integrating databases, enhancing UI
+                with
+                Bootstrap, and learning deployment strategies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container text-center">
+        <h2 data-aos="fade-up" class="gradient-text">Skills</h2>
+        <div class="d-flex flex-wrap justify-content-center mt-4" data-aos="fade-up" data-aos-delay="100">
+          <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+          <span class="skill-badge"><i class="fas fa-chart-bar"></i> Data Analysis</span>
+          <span class="skill-badge"><i class="fas fa-brain"></i> Machine Learning</span>
+          <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
+          <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
+          <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+          <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
+          <span class="skill-badge"><i class="fas fa-chart-pie"></i> Power BI</span>
+          <span class="skill-badge"><i class="fas fa-code"></i> Django</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container text-center">
+        <h2 data-aos="fade-up" class="gradient-text">Get In Touch</h2>
+        <p data-aos="fade-up" data-aos-delay="100" class="lead text-white-50 mb-4">
+          I'm currently looking for new opportunities. My inbox is always open!
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
+          <a href="mailto:er.alok.tiwari.25@gmail.com" class="btn btn-gradient btn-lg">
+            <i class="fas fa-envelope me-2"></i> Email Me
+          </a>
+          <a href="https://www.linkedin.com/in/er-alok-tiwari" target="_blank" class="btn btn-gradient btn-lg">
+            <i class="fab fa-linkedin me-2"></i> LinkedIn
+          </a>
+          <a href="https://github.com/AalokT-80" target="_blank" class="btn btn-gradient btn-lg">
+            <i class="fab fa-github me-2"></i> GitHub
+          </a>
+          <a href="https://wa.me/919405321773" target="_blank" class="btn btn-gradient btn-lg">
+            <i class="fab fa-whatsapp me-2"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Alok Tiwari.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
 
