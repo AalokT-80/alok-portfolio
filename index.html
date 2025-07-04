@@ -18,223 +18,244 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
     <style>
-        :root {
-            --bg-color: #111827;
-            --text-color: #F3F4F6;
-            --card-bg: rgba(31, 41, 55, 0.5);
-            --border-color: rgba(243, 244, 246, 0.2);
-            --gradient: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc, #f472b6);
-            --nav-bg: rgba(17, 24, 39, 0.8);
-            --nav-height: 70px;
-            /* Define navbar height for calculations */
-        }
+  :root {
+    --bg-color: #111827;
+    --text-color: #F3F4F6;
+    --card-bg: rgba(31, 41, 55, 0.5);
+    --border-color: rgba(243, 244, 246, 0.2);
+    --gradient: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc, #f472b6);
+    --nav-bg: rgba(17, 24, 39, 0.8);
+    --nav-height: 70px;
+  }
 
-        html {
-            /* FIX #1: Modern, performant smooth scrolling with pure CSS */
-            scroll-behavior: smooth;
-            /* FIX #2: Prevents fixed navbar from covering section titles on scroll */
-            scroll-padding-top: var(--nav-height);
-        }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            position: relative;
-        }
+  html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+    margin: 0;
+    padding: 0;
+  }
 
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
 
-        .navbar {
-            background-color: var(--nav-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            min-height: var(--nav-height);
-        }
+  #particles-js {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 
-        .navbar-brand,
-        .nav-link {
-            color: var(--text-color) !important;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
 
-        .navbar-brand {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
+  .navbar {
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    min-height: var(--nav-height);
+  }
 
-        .nav-link.active,
-        .nav-link:hover {
-            color: #818cf8 !important;
-        }
+  .navbar-brand,
+  .nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
 
-        .navbar-toggler {
-            border: none;
-            padding: 0.25rem 0.5rem;
-            font-size: 1.1rem;
-            background: rgba(129, 140, 248, 0.1);
-            border-radius: 0.5rem;
-        }
+  .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
 
-        .navbar-toggler:focus {
-            box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.25);
-        }
+  .nav-link.active,
+  .nav-link:hover {
+    color: #818cf8 !important;
+  }
 
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28243, 244, 246, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
+  .navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.1rem;
+    background: rgba(129, 140, 248, 0.1);
+    border-radius: 0.5rem;
+  }
 
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1rem;
-        }
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.25);
+  }
 
-        #hero .hero-image {
-            width: 150px;
-            /* FIX #3: Explicit width to prevent layout shift */
-            height: 150px;
-            /* FIX #4: Explicit height to prevent layout shift */
-            border-radius: 50%;
-            border: 4px solid #818cf8;
-            box-shadow: 0 0 25px rgba(129, 140, 248, 0.5);
-        }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28243, 244, 246, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
 
-        #hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-        }
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
 
-        .gradient-text {
-            background: var(--gradient);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-flow 5s ease infinite;
-        }
+  #hero .hero-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #818cf8;
+    box-shadow: 0 0 25px rgba(129, 140, 248, 0.5);
+  }
 
-        @keyframes gradient-flow {
-            0% {
-                background-position: 0% 50%;
-            }
+  #hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+  }
 
-            50% {
-                background-position: 100% 50%;
-            }
+  .gradient-text {
+    background: var(--gradient);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 5s ease infinite;
+  }
 
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-        .typewriter {
-            font-size: clamp(1.2rem, 4vw, 1.5rem);
-            font-family: 'Space Grotesk', sans-serif;
-            color: #9CA3AF;
-            min-height: 2.5rem;
-            /* Ensures space is reserved for text */
-        }
+  .typewriter {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-family: 'Space Grotesk', sans-serif;
+    color: #9CA3AF;
+    min-height: 2.5rem;
+  }
 
-        .typewriter>#typed-text {
-            border-right: 0.15em solid #818cf8;
-            animation: caret 0.75s steps(1) infinite;
-        }
+  .typewriter>#typed-text {
+    border-right: 0.15em solid #818cf8;
+    animation: caret 0.75s steps(1) infinite;
+  }
 
-        @keyframes caret {
-            50% {
-                border-color: transparent;
-            }
-        }
+  @keyframes caret {
+    50% { border-color: transparent; }
+  }
 
-        section {
-            padding: 6rem 0;
-            position: relative;
-        }
+  section {
+    padding: 6rem 0;
+    position: relative;
+  }
 
-        section h2 {
-            text-align: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
+  section h2 {
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
 
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
+  .glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+  }
 
-        .glass-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-        }
+  .glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  }
 
-        .btn-gradient {
-            background-image: var(--gradient);
-            background-size: 200% auto;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: background-position 0.3s ease;
-        }
+  .btn-gradient {
+    background-image: var(--gradient);
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-position 0.3s ease;
+  }
 
-        .btn-gradient:hover {
-            background-position: right center;
-            color: white;
-        }
+  .btn-gradient:hover {
+    background-position: right center;
+    color: white;
+  }
 
-        .skill-badge {
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            padding: 0.8em 1.2em;
-            margin: 0.5em;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75em;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: all 0.2s ease;
-        }
+  .skill-badge {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.8em 1.2em;
+    margin: 0.5em;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75em;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+  }
 
-        .skill-badge:hover {
-            transform: scale(1.05);
-            color: #c084fc;
-        }
+  .skill-badge:hover {
+    transform: scale(1.05);
+    color: #c084fc;
+  }
 
-        footer {
-            background: #111827;
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            color: #9CA3AF;
-        }
-    </style>
+  footer {
+    background: #111827;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: #9CA3AF;
+  }
+
+  @media (max-width: 767px) {
+    .navbar-nav {
+      background-color: var(--nav-bg);
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    section {
+      padding: 4rem 1rem;
+    }
+
+    .glass-card {
+      margin: 1rem 0;
+    }
+
+    .typewriter {
+      font-size: 1rem;
+    }
+
+    #hero h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#main-nav">
@@ -487,88 +508,84 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
 
-    <script defer>
-        // Use DOMContentLoaded to ensure the HTML is fully loaded before running scripts
-        document.addEventListener('DOMContentLoaded', () => {
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true, offset: 50 });
 
-            // Initialize animations on scroll
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 50,
-            });
-
-            // Initialize particles.js if the element exists
-            if (document.getElementById('particles-js')) {
-                particlesJS("particles-js", {
-                    particles: {
-                        number: { value: 60, density: { enable: true, value_area: 800 } },
-                        color: { value: "#818cf8" },
-                        shape: { type: "circle" },
-                        opacity: { value: 0.4, random: true },
-                        size: { value: 3, random: true },
-                        line_linked: { enable: true, distance: 150, color: "#818cf8", opacity: 0.3, width: 1 },
-                        move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" },
-                    },
-                    interactivity: {
-                        detect_on: "canvas",
-                        events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
-                        modes: { grab: { distance: 140, line_opacity: 0.8 }, push: { particles_nb: 4 } },
-                    },
-                    retina_detect: true,
-                });
-            }
-
-            // Typewriter effect
-            const typedTextElement = document.getElementById('typed-text');
-            if (typedTextElement) {
-                const phrases = ["a Data Analyst.", "an ML Engineer.", "a Web Developer."];
-                let phraseIndex = 0;
-                let charIndex = 0;
-                let isDeleting = false;
-
-                function typeWriter() {
-                    const currentPhrase = phrases[phraseIndex];
-                    let typeSpeed = isDeleting ? 75 : 150;
-
-                    if (isDeleting) {
-                        typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                        charIndex--;
-                    } else {
-                        typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                        charIndex++;
-                    }
-
-                    if (!isDeleting && charIndex === currentPhrase.length) {
-                        typeSpeed = 2000;
-                        isDeleting = true;
-                    } else if (isDeleting && charIndex === 0) {
-                        isDeleting = false;
-                        phraseIndex = (phraseIndex + 1) % phrases.length;
-                        typeSpeed = 500;
-                    }
-
-                    setTimeout(typeWriter, typeSpeed);
-                }
-                typeWriter();
-            }
-
-            // FIX #5: Automatically close mobile navbar when a link is clicked
-            const navLinks = document.querySelectorAll('.nav-link');
-            const menuToggle = document.getElementById('navbarNav');
-            const bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
-            navLinks.forEach((link) => {
-                link.addEventListener('click', () => {
-                    if (menuToggle.classList.contains('show')) {
-                        bsCollapse.hide();
-                    }
-                });
-            });
+      // particles.js init
+      if (document.getElementById('particles-js')) {
+        particlesJS("particles-js", {
+          particles: {
+            number: { value: 60, density: { enable: true, value_area: 800 } },
+            color: { value: "#818cf8" },
+            shape: { type: "circle" },
+            opacity: { value: 0.4, random: true },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 150, color: "#818cf8", opacity: 0.3, width: 1 },
+            move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+            modes: { grab: { distance: 140, line_opacity: 0.8 }, push: { particles_nb: 4 } },
+          },
+          retina_detect: true,
         });
-    </script>
+      }
+
+      // Typewriter effect
+      const typedTextElement = document.getElementById('typed-text');
+      if (typedTextElement) {
+        const phrases = ["a Data Analyst.", "an ML Engineer.", "a Web Developer."];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+          const currentPhrase = phrases[phraseIndex];
+          let typeSpeed = isDeleting ? 75 : 150;
+
+          if (isDeleting) {
+            typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+          } else {
+            typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+          }
+
+          if (!isDeleting && charIndex === currentPhrase.length) {
+            typeSpeed = 2000;
+            isDeleting = true;
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typeSpeed = 500;
+          }
+
+          setTimeout(typeWriter, typeSpeed);
+        }
+        typeWriter();
+      }
+
+      // Correct Navbar collapse logic
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const navbarCollapse = document.getElementById('navbarNav');
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.getComputedStyle(navbarToggler).display !== 'none') {
+            // Only collapse if toggler is visible (mobile mode)
+            new bootstrap.Collapse(navbarCollapse).hide();
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 
 </html>
