@@ -55,6 +55,7 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
         }
 
         .navbar-brand,
@@ -67,6 +68,7 @@
         .navbar-brand {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
+            font-size: 1.5rem;
         }
 
         .nav-link.active,
@@ -74,6 +76,53 @@
             color: #818cf8 !important;
         }
 
+        /* Custom navbar toggler for better visibility */
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+            font-size: 1.1rem;
+            background: rgba(129, 140, 248, 0.1);
+            border-radius: 0.5rem;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.25);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28243, 244, 246, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Mobile menu styling */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: var(--nav-bg);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 0.5rem;
+                margin-top: 1rem;
+                padding: 1rem;
+                border: 1px solid var(--border-color);
+            }
+
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .nav-item {
+                margin: 0.25rem 0;
+            }
+
+            .nav-link {
+                padding: 0.5rem 1rem !important;
+                border-radius: 0.5rem;
+                transition: all 0.2s ease;
+            }
+
+            .nav-link:hover {
+                background-color: rgba(129, 140, 248, 0.1);
+            }
+        }
 
         #hero {
             height: 100vh;
@@ -82,12 +131,12 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 1rem; /* Added padding for small screens */
+            padding: 0 1rem;
         }
 
         #hero .hero-image {
-            width: clamp(120px, 30vw, 150px); /* Responsive width */
-            height: clamp(120px, 30vw, 150px); /* Responsive height */
+            width: clamp(120px, 30vw, 150px);
+            height: clamp(120px, 30vw, 150px);
             border-radius: 50%;
             border: 4px solid #818cf8;
             box-shadow: 0 0 25px rgba(129, 140, 248, 0.5);
@@ -122,7 +171,7 @@
         }
 
         .typewriter {
-            font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
             font-family: 'Space Grotesk', sans-serif;
             color: #9CA3AF;
             min-height: 2.5rem;
@@ -183,7 +232,6 @@
             color: white;
         }
 
-
         .skill-badge {
             background-color: var(--card-bg);
             color: var(--text-color);
@@ -203,7 +251,6 @@
             color: #c084fc;
         }
 
-
         footer {
             background: #111827;
             padding: 2rem 0;
@@ -215,6 +262,22 @@
         body.light-mode footer {
             background: #E5E7EB;
         }
+
+        /* Additional responsive fixes */
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 0;
+            }
+            
+            section h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            #hero {
+                padding: 0 1.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -224,7 +287,8 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#hero">ALOK TIWARI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -264,7 +328,6 @@
             </div>
         </div>
     </section>
-
 
     <section id="education">
         <div class="container">
@@ -327,7 +390,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -388,6 +450,7 @@
             </div>
         </div>
     </section>
+
     <section id="internships">
         <div class="container">
             <h2 data-aos="fade-up" class="gradient-text">Internships</h2>
@@ -418,7 +481,6 @@
         </div>
     </section>
 
-    </section>
     <section id="skills">
         <div class="container text-center">
             <h2 data-aos="fade-up" class="gradient-text">Skills</h2>
@@ -436,8 +498,6 @@
         </div>
     </section>
 
-
-
     <section id="contact">
         <div class="container text-center">
             <h2 data-aos="fade-up" class="gradient-text">Get In Touch</h2>
@@ -451,7 +511,7 @@
                 <a href="https://www.linkedin.com/in/er-alok-tiwari" target="_blank" class="btn btn-gradient btn-lg">
                     <i class="fab fa-linkedin me-2"></i> LinkedIn
                 </a>
-                <a href="https://github.com/AlokTiwari25" target="_blank" class="btn btn-gradient btn-lg">
+                <a href="https://github.com/AalokT-80" target="_blank" class="btn btn-gradient btn-lg">
                     <i class="fab fa-github me-2"></i> GitHub
                 </a>
                 <a href="https://wa.me/919405321773" target="_blank" class="btn btn-gradient btn-lg">
@@ -460,7 +520,6 @@
             </div>
         </div>
     </section>
-
 
     <footer>
         <div class="container">
@@ -530,6 +589,25 @@
                 setTimeout(typeWriter, typeSpeed);
             }
             typeWriter();
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse);
+                            bootstrapCollapse.hide();
+                        }
+                        
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
