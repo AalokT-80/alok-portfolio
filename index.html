@@ -602,40 +602,36 @@
   <script>
 
     document.getElementById('feedback-form').addEventListener('submit', function (e) {
-      e.preventDefault();
+        e.preventDefault();
 
-      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby5LK78N7VQsCjD80DWgW3fQiLIVncqctQJmUJRoo0P4KnrY9kdVGBAxgmWk7potQERew/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby5LK78N7VQsCjD80DWgW3fQiLIVncqctQJmUJRoo0P4KnrY9kdVGBAxgmWk7potQERew/exec";
 
-      const form = e.target;
-      const data = new FormData(form);
-      const feedbackStatus = document.getElementById('feedback-status');
-      const submitButton = form.querySelector('button[type="submit"]');
+        const form = e.target;
+        const data = new FormData(form);
+        const feedbackStatus = document.getElementById('feedback-status');
+        const submitButton = form.querySelector('button[type="submit"]');
 
-      submitButton.disabled = true;
-      feedbackStatus.textContent = 'Submitting...';
+        submitButton.disabled = true;
+        feedbackStatus.textContent = 'Submitting...';
 
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: data
-      })
-        .then(response => response.json()) 
-        .then(res => {
-          if (res.result === 'success') {
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: data,
+            mode: 'no-cors' 
+        })
+        .then(response => {
             const modal = new bootstrap.Modal(document.getElementById('feedbackModal'));
             modal.show();
             feedbackStatus.textContent = '';
             form.reset();
-          } else {
-
-            throw new Error(res.error || 'Submission failed. Please try again.');
-          }
         })
         .catch(error => {
-          console.error('Error!', error.message);
-          feedbackStatus.textContent = 'An error occurred. Please try again later.';
+            // This will catch genuine network errors (e.g., no internet)
+            console.error('Error!', error);
+            feedbackStatus.textContent = 'An error occurred. Please try again later.';
         })
         .finally(() => {
-          submitButton.disabled = false; 
+            submitButton.disabled = false;
         });
     });
 
