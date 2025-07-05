@@ -291,6 +291,7 @@
           <li class="nav-item"><a class="nav-link" href="#internships">Internships</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
         </ul>
       </div>
     </div>
@@ -489,6 +490,59 @@
         </div>
       </div>
     </section>
+    <section id="feedback">
+      <div class="container text-center">
+        <h2 data-aos="fade-up" class="gradient-text">Feedback</h2>
+        <p data-aos="fade-up" data-aos-delay="100" class="lead text-white-50 mb-4">
+          I'd love to hear your thoughts. Share your feedback below!
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8" data-aos="fade-up" data-aos-delay="200">
+            <form action="https://formsubmit.co/er.alok.tiwari.25@gmail.com" method="POST" class="glass-card p-4"
+              target="hidden_iframe" onsubmit="submitted=true; showModal();">
+              <!-- Prevent CAPTCHA & Redirect -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="">
+
+              <div class="mb-3 text-start">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control bg-dark text-white border-secondary" id="name"
+                  required>
+              </div>
+
+              <div class="mb-3 text-start">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control bg-dark text-white border-secondary" id="email"
+                  required>
+              </div>
+
+              <div class="mb-3 text-start">
+                <label for="message" class="form-label">Message</label>
+                <textarea name="message" rows="5" class="form-control bg-dark text-white border-secondary" id="message"
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gradient">Submit Feedback</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden iframe to prevent redirect -->
+      <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) showModal();"></iframe>
+
+      <!-- Success Modal -->
+      <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content glass-card text-center p-4">
+            <h5 class="gradient-text mb-2" id="successModalLabel">Thank You!</h5>
+            <p class="text-white-50 mb-0">Your feedback has been received successfully.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="contact">
       <div class="container text-center">
@@ -525,6 +579,14 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
 
   <script>
+
+    let submitted = false;
+
+    function showModal() {
+      const modal = new bootstrap.Modal(document.getElementById('successModal'));
+      modal.show();
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       AOS.init({ duration: 800, once: true, offset: 50 });
 
