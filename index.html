@@ -607,6 +607,7 @@
 
       fetch('https://script.google.com/macros/s/AKfycbyr_D0olbHUKUs80zfbtE2uuy5Li1qpyibiIFRbt_ZpzI5gN0FVgSKLFtUZ6jvOV2XYLw/exec', {
         method: 'POST',
+        mode: 'no-cors',
         body: data
       })
         .then(response => {
