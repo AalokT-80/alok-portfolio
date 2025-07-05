@@ -218,6 +218,28 @@
       color: white;
     }
 
+    .glass-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      color: var(--text-color);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .glass-input::placeholder {
+      color: rgba(243, 244, 246, 0.6);
+    }
+
+    .glass-input:focus {
+      outline: none;
+      border-color: #818cf8;
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
     .skill-badge {
       background-color: var(--card-bg);
       color: var(--text-color);
@@ -290,8 +312,8 @@
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#internships">Internships</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -490,57 +512,55 @@
         </div>
       </div>
     </section>
-    <section id="feedback">
+
+    <section id="feedback" style="background-color: var(--bg-color);">
       <div class="container text-center">
         <h2 data-aos="fade-up" class="gradient-text">Share Your Feedback</h2>
-        <p data-aos="fade-up" data-aos-delay="100" class="lead text-white-50 mb-4">
+        <p class="text-white-50 mb-4" data-aos="fade-up" data-aos-delay="100">
           I’d really appreciate your feedback or suggestions to help me grow in the industry.
         </p>
-
         <div class="row justify-content-center">
-          <div class="col-md-8" data-aos="fade-up" data-aos-delay="200">
-            <form action="https://formsubmit.co/er.alok.tiwari.25@gmail.com" method="POST" class="glass-card p-4"
-              target="hidden_iframe" onsubmit="submitted=true; showModal();">
-              
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="">
-
+          <div class="col-md-8">
+            <form id="feedback-form" class="glass-card p-4" data-aos="fade-up" data-aos-delay="200">
               <div class="mb-3 text-start">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control bg-dark text-white border-secondary" id="name"
-                  required>
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control glass-input" id="name" name="name" placeholder="Enter your name">
               </div>
-
               <div class="mb-3 text-start">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control bg-dark text-white border-secondary" id="email"
-                  required>
+                <label for="email" class="form-label">Your Email (Optional)</label>
+                <input type="email" class="form-control glass-input" id="email" name="email"
+                  placeholder="Enter your email">
               </div>
-
               <div class="mb-3 text-start">
-                <label for="message" class="form-label">Message</label>
-                <textarea name="message" rows="5" class="form-control bg-dark text-white border-secondary" id="message"
-                  required></textarea>
+                <label for="message" class="form-label">Feedback or Suggestions</label>
+                <textarea class="form-control glass-input" id="message" name="message" rows="4"
+                  placeholder="Your message..."></textarea>
               </div>
-
-              <button type="submit" class="btn btn-gradient">Submit Feedback</button>
+              <button type="submit" class="btn btn-gradient">Send Feedback</button>
+              <div id="feedback-status" class="mt-3 text-white-50 small"></div>
             </form>
           </div>
         </div>
       </div>
+    </section>
 
-
-      <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) showModal();"></iframe>
-
-      <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content glass-card text-center p-4">
-            <h5 class="gradient-text mb-2" id="successModalLabel">Thank You!</h5>
-            <p class="text-white-50 mb-0">Your feedback has been received successfully.</p>
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header border-0">
+            <h5 class="modal-title gradient-text" id="feedbackModalLabel">Thank You!</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            Your feedback has been received. I truly appreciate your input!
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-gradient" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
 
 
     <section id="contact">
@@ -579,12 +599,37 @@
 
   <script>
 
-    let submitted = false;
+    document.getElementById('feedback-form').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    function showModal() {
-      const modal = new bootstrap.Modal(document.getElementById('successModal'));
-      modal.show();
-    }
+      const form = e.target;
+      const data = new FormData(form);
+
+      fetch('https://script.google.com/macros/s/AKfycbyr_D0olbHUKUs80zfbtE2uuy5Li1qpyibiIFRbt_ZpzI5gN0FVgSKLFtUZ6jvOV2XYLw/exec', {
+        method: 'POST',
+        body: data
+      })
+        .then(response => {
+          if (response.ok) {
+            const modal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+            modal.show();
+            document.getElementById('feedback-status').textContent = '';
+            form.reset();
+          } else {
+            document.getElementById('feedback-status').textContent = 'Submission failed. Please try again later.';
+          }
+        })
+        .catch(error => {
+          document.getElementById('feedback-status').textContent = 'An error occurred. Please try again later.';
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      bootstrap.ScrollSpy.getInstance(document.body) || new bootstrap.ScrollSpy(document.body, {
+        target: '#main-nav',
+        offset: 80
+      });
+    });
 
     document.addEventListener('DOMContentLoaded', () => {
       AOS.init({ duration: 800, once: true, offset: 50 });
@@ -656,6 +701,22 @@
         });
       });
     });
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 100;
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+
   </script>
 
 </body>
