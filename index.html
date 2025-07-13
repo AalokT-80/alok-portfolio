@@ -90,7 +90,7 @@
     }
 
     .nav-link.active,
-    .nav-link:hover {
+    #main-nav .nav-link:hover {
       color: #818cf8 !important;
     }
 
@@ -259,6 +259,39 @@
       color: #c084fc;
     }
 
+    .cert-tabs {
+      border-bottom: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .cert-tabs .nav-link {
+      background: rgba(31, 41, 55, 0.4);
+      border: 1px solid var(--border-color) !important;
+      color: var(--text-color) !important;
+      margin: 0 0.5rem;
+      border-radius: 10px !important;
+      padding: 0.8rem 1.5rem;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+
+    .cert-tabs .nav-link:hover {
+      background: rgba(41, 51, 65, 0.7);
+      border-color: #818cf8 !important;
+      transform: translateY(-3px);
+    }
+
+    .cert-tabs .nav-link.active {
+      background-image: var(--gradient);
+      background-size: 200% auto;
+      color: white !important;
+      border-color: transparent !important;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(129, 140, 248, 0.3);
+    }
+
     footer {
       background: #111827;
       padding: 2rem 0;
@@ -279,7 +312,7 @@
       }
 
       .glass-card {
-        margin: 1rem 0;
+        margin-bottom: 1.5rem;
       }
 
       .typewriter {
@@ -288,6 +321,12 @@
 
       #hero h1 {
         font-size: 2rem;
+      }
+
+      .cert-tabs .nav-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+        margin: 0.2rem;
       }
     }
   </style>
@@ -366,45 +405,162 @@
     <section id="certifications">
       <div class="container">
         <h2 data-aos="fade-up" class="gradient-text">Certifications</h2>
-        <div class="row gy-4">
-          <div class="col-md-4" data-aos="fade-up">
-            <div class="glass-card p-4 text-center">
-              <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-              <h5 class="mt-3">Foundations: Data, Data, Everywhere</h5>
-              <a href="https://www.coursera.org/account/accomplishments/verify/V3EH3DMN7AYW" target="_blank"
-                class="btn btn-gradient mt-2">View Credential</a>
+
+        <ul class="nav nav-pills justify-content-center flex-wrap cert-tabs" id="pills-tab" role="tablist"
+          data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-data-analytics-tab" data-bs-toggle="pill"
+              data-bs-target="#pills-data-analytics" type="button" role="tab" aria-controls="pills-data-analytics"
+              aria-selected="true">Google Data Analytics</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-python-tab" data-bs-toggle="pill" data-bs-target="#pills-python"
+              type="button" role="tab" aria-controls="pills-python" aria-selected="false">Python</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-web-dev-tab" data-bs-toggle="pill" data-bs-target="#pills-web-dev"
+              type="button" role="tab" aria-controls="pills-web-dev" aria-selected="false">Web Development</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-ml-tab" data-bs-toggle="pill" data-bs-target="#pills-ml" type="button"
+              role="tab" aria-controls="pills-ml" aria-selected="false">Machine
+              Learning</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-ai-tab" data-bs-toggle="pill" data-bs-target="#pills-ai" type="button"
+              role="tab" aria-controls="pills-ai" aria-selected="false">AI</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+
+          <div class="tab-pane fade show active" id="pills-data-analytics" role="tabpanel"
+            aria-labelledby="pills-data-analytics-tab">
+            <div class="row gy-4">
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#4285F4"><i class="fab fa-google"></i></div>
+                  <h5 class="mt-3">Foundations: Data, Data, Everywhere</h5>
+                  <a href="https://www.coursera.org/account/accomplishments/verify/V3EH3DMN7AYW" target="_blank"
+                    class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#4285F4"><i class="fab fa-google"></i></div>
+                  <h5 class="mt-3">Ask Questions to Make Data-Driven Decisions</h5>
+                  <a href="https://www.coursera.org/account/accomplishments/verify/L5BAF25JLIHZ" target="_blank"
+                    class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#4285F4"><i class="fab fa-google"></i></div>
+                  <h5 class="mt-3">Prepare Data for Exploration</h5>
+                  <a href="https://www.coursera.org/account/accomplishments/verify/R7QXXYP88Q56" target="_blank"
+                    class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#4285F4"><i class="fab fa-google"></i></div>
+                  <h5 class="mt-3">Process Data from Dirty to Clean</h5>
+                  <a href="https://www.coursera.org/account/accomplishments/verify/K3F4YUZM33PD" target="_blank"
+                    class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="glass-card p-4 text-center">
-              <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-              <h5 class="mt-3">Ask Questions to Make Data-Driven Decisions</h5>
-              <a href="https://www.coursera.org/account/accomplishments/verify/L5BAF25JLIHZ" target="_blank"
-                class="btn btn-gradient mt-2">View Credential</a>
+
+          <div class="tab-pane fade" id="pills-python" role="tabpanel" aria-labelledby="pills-python-tab">
+            <div class="row gy-4 justify-content-center">
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#FFD43B;"><i class="fab fa-python"></i></div>
+                  <h5 class="mt-3">Basics of Python</h5>
+                  <p class="text-white-50 mb-2"></p>
+                  <a href="https://www.linkedin.com/posts/er-alok-tiwari_infosysspringboard-python-activity-7052895332283666432-LiyB? utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD2gjOoBX1X3l5iAMCZ47eEJvnr-KZdu6iE"
+                    target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#FFD43B;"><i class="fab fa-python"></i></div>
+                  <h5 class="mt-3">Python Foundation Certification</h5>
+                  <p class="text-white-50 mb-2"></p>
+                  <a href="https://www.linkedin.com/posts/er-alok-tiwari_infosysspringboard-python-activity-7052894714525618176-5V1t?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD2gjOoBX1X3l5iAMCZ47eEJvnr-KZdu6iE"
+                    target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#4285F4;"><i class="fab fa-kaggle"></i></i></div>
+                  <h5 class="mt-3">Python</h5>
+                  <p class="text-white-50 mb-2"></p>
+                  <a href="https://www.linkedin.com/posts/er-alok-tiwari_kaggle-certification-python-activity-7052889748528398336-5RBZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2gjOoBX1X3l5iAMCZ47eEJvnr-KZdu6iE"
+                    target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="glass-card p-4 text-center">
-              <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-              <h5 class="mt-3">Prepare Data for Exploration</h5>
-              <a href="https://www.coursera.org/account/accomplishments/verify/R7QXXYP88Q56" target="_blank"
-                class="btn btn-gradient mt-2">View Credential</a>
+
+          <div class="tab-pane fade" id="pills-web-dev" role="tabpanel" aria-labelledby="pills-web-dev-tab">
+            <div class="row gy-4 justify-content-center">
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#007BFF;"><i class="fab fa-react"></i></div>
+                  <h5 class="mt-3">Full-Stack Web Development</h5>
+                  <p class="text-white-50 mb-2">To be added</p>
+                  <a href="#" target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="glass-card p-4 text-center">
-              <div class="fs-1 text-primary"><i class="fab fa-google"></i></div>
-              <h5 class="mt-3">Process Data from Dirty to Clean</h5>
-              <a href="https://www.coursera.org/account/accomplishments/verify/K3F4YUZM33PD" target="_blank"
-                class="btn btn-gradient mt-2">View Credential</a>
+
+          <div class="tab-pane fade" id="pills-ml" role="tabpanel" aria-labelledby="pills-ml-tab">
+            <div class="row gy-4 justify-content-center">
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#20BEFF;"><i class="fas fa-robot"></i></div>
+                  <h5 class="mt-3">Machine Learning</h5>
+                  <p class="text-white-50 mb-2">To be added</p>
+                  <a href="#" target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="row justify-content-center mt-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="col-md-8">
-              <div class="glass-card p-3 text-center">
-                <p class="mb-0 text-white-50">
-                  📄 More certifications in progress... stay tuned for updates!
-                </p>
+
+          <div class="tab-pane fade" id="pills-ai" role="tabpanel" aria-labelledby="pills-ai-tab">
+            <div class="row gy-4 justify-content-center">
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#f472b6;"><img src="assets/image/google_cloud.png"
+                      alt="Google Cloud Skills Boost badge" height="40"></div>
+                  <h5 class="mt-3">Generative AI Fundamentals</h5>
+                  <p class="text-white-50 mb-2">Cloud Skillbost</p>
+                  <a href="https://www.cloudskillsboost.google/public_profiles/49920e4c-8b8d-4489-9a25-49fc4dcaef2d/badges/6065264?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+                    target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#f472b6;"><img src="assets/image/google_cloud.png"
+                      alt="Google Cloud Skills Boost badge" height="40"></div>
+                  <h5 class="mt-3">Introduction to LLMs</h5>
+                  <p class="text-white-50 mb-2">Cloud Skillbost</p>
+                  <a href="https://www.cloudskillsboost.google/public_profiles/49920e4c-8b8d-4489-9a25-49fc4dcaef2d/badges/6057912?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+                    target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="glass-card p-4 text-center">
+                  <div class="fs-1" style="color:#f472b6;"><img src="assets/image/google_cloud.png"
+                      alt="Google Cloud Skills Boost badge" height="40"></div>
+                  <h5 class="mt-3">Introduction to Gen AI</h5>
+                  <p class="text-white-50 mb-2">Cloud Skillbost</p>
+                  <a href="https://www.cloudskillsboost.google/public_profiles/49920e4c-8b8d-4489-9a25-49fc4dcaef2d/badges/6044963?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+                    target="_blank" class="btn btn-gradient mt-2">View Credential</a>
+                </div>
               </div>
             </div>
           </div>
@@ -419,8 +575,10 @@
           <div class="col-lg-6" data-aos="fade-right">
             <div class="glass-card p-4">
               <h5>CNN-based Coronary Artery Disease Detection System</h5>
-              <p class="text-white-50">Developed a Convolutional Neural Network (CNN) model to detect Coronary Artery
-                Disease (CAD) from cardiac images with ~90% accuracy, utilizing data augmentation and optimized training
+              <p class="text-white-50">Developed a Convolutional Neural Network (CNN) model to detect
+                Coronary Artery
+                Disease (CAD) from cardiac images with ~90% accuracy, utilizing data augmentation and
+                optimized training
                 workflows in TensorFlow. Deployed the model using Flask for real-time inference.</p>
               <div class="mb-3">
                 <span class="badge bg-secondary">Python</span>
@@ -525,8 +683,8 @@
               style="border-radius: 16px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
               <div class="mb-3 text-start">
                 <label for="name" class="form-label">Your Name</label>
-                <input type="text" class="form-control glass-input text-white" id="name" name="name" placeholder="Enter your name"
-                  required>
+                <input type="text" class="form-control glass-input text-white" id="name" name="name"
+                  placeholder="Enter your name" required>
               </div>
               <div class="mb-3 text-start">
                 <label for="email" class="form-label">Your Email (Optional)</label>
@@ -562,8 +720,6 @@
         </div>
       </div>
     </div>
-
-
 
     <section id="contact">
       <div class="container text-center">
@@ -601,45 +757,10 @@
 
   <script>
 
-    document.getElementById('feedback-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby5LK78N7VQsCjD80DWgW3fQiLIVncqctQJmUJRoo0P4KnrY9kdVGBAxgmWk7potQERew/exec";
-
-        const form = e.target;
-        const data = new FormData(form);
-        const feedbackStatus = document.getElementById('feedback-status');
-        const submitButton = form.querySelector('button[type="submit"]');
-
-        submitButton.disabled = true;
-        feedbackStatus.textContent = 'Submitting...';
-
-        fetch(SCRIPT_URL, {
-            method: 'POST',
-            body: data,
-            mode: 'no-cors' 
-        })
-        .then(response => {
-            const modal = new bootstrap.Modal(document.getElementById('feedbackModal'));
-            modal.show();
-            feedbackStatus.textContent = '';
-            form.reset();
-        })
-        .catch(error => {
-            // This will catch genuine network errors (e.g., no internet)
-            console.error('Error!', error);
-            feedbackStatus.textContent = 'An error occurred. Please try again later.';
-        })
-        .finally(() => {
-            submitButton.disabled = false;
-        });
-    });
-
-
     document.addEventListener('DOMContentLoaded', () => {
+
       AOS.init({ duration: 800, once: true, offset: 50 });
 
-      // particles.js init
       if (document.getElementById('particles-js')) {
         particlesJS("particles-js", {
           particles: {
@@ -660,7 +781,6 @@
         });
       }
 
-      // Typewriter effect
       const typedTextElement = document.getElementById('typed-text');
       if (typedTextElement) {
         const phrases = ["a Data Analyst.", "an ML Engineer.", "a Web Developer."];
@@ -688,40 +808,81 @@
             phraseIndex = (phraseIndex + 1) % phrases.length;
             typeSpeed = 500;
           }
-
           setTimeout(typeWriter, typeSpeed);
         }
         typeWriter();
       }
 
-      const navLinks = document.querySelectorAll('.nav-link');
+      const mainNavLinks = document.querySelectorAll('#main-nav .nav-link');
       const navbarToggler = document.querySelector('.navbar-toggler');
       const navbarCollapse = document.getElementById('navbarNav');
 
-      navLinks.forEach((link) => {
+      mainNavLinks.forEach((link) => {
         link.addEventListener('click', () => {
           if (window.getComputedStyle(navbarToggler).display !== 'none') {
             new bootstrap.Collapse(navbarCollapse).hide();
           }
         });
       });
-    });
-    const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-      let fromTop = window.scrollY + 100;
-      navLinks.forEach(link => {
-        const section = document.querySelector(link.getAttribute('href'));
-        if (
-          section.offsetTop <= fromTop &&
-          section.offsetTop + section.offsetHeight > fromTop
-        ) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
+      const certificationTabs = document.querySelectorAll('#pills-tab button[data-bs-toggle="pill"]');
+      certificationTabs.forEach(tab => {
+        tab.addEventListener('shown.bs.tab', (event) => {
+          AOS.refresh();
+        });
+      });
+
+      const scrollSpyNavLinks = document.querySelectorAll('#main-nav .nav-link');
+      window.addEventListener('scroll', () => {
+        let fromTop = window.scrollY + 100;
+        scrollSpyNavLinks.forEach(link => {
+          const section = document.querySelector(link.getAttribute('href'));
+          if (
+            section &&
+            section.offsetTop <= fromTop &&
+            section.offsetTop + section.offsetHeight > fromTop
+          ) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
       });
     });
+    const feedbackForm = document.getElementById('feedback-form');
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby5LK78N7VQsCjD80DWgW3fQiLIVncqctQJmUJRoo0P4KnrY9kdVGBAxgmWk7potQERew/exec";
+
+        const form = e.target;
+        const data = new FormData(form);
+        const feedbackStatus = document.getElementById('feedback-status');
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        submitButton.disabled = true;
+        feedbackStatus.textContent = 'Submitting...';
+
+        fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: data,
+          mode: 'no-cors'
+        })
+          .then(response => {
+            const modal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+            modal.show();
+            feedbackStatus.textContent = '';
+            form.reset();
+          })
+          .catch(error => {
+            console.error('Error!', error);
+            feedbackStatus.textContent = 'An error occurred. Please try again later.';
+          })
+          .finally(() => {
+            submitButton.disabled = false;
+          });
+      });
+    }
   </script>
 
 </body>
